@@ -1,0 +1,3 @@
+# This is a placeholder file. Replace this with your actual audio file.
+# Supported formats: MP3, WAV, OGG
+# File should be named: audio.mp3, audio.wav, or audio.ogg

@@ -1,0 +1,33 @@
+{
+  "name": "kintone-vue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode production",
+    "build-dev": "vite build --mode development",
+    "preview": "vite preview",
+    "copy-build-file-to-kintone": "xcopy /Y /S /I dist\\kintone-vue.js dest\\desktop\\js\\ & xcopy /Y /S /I dist\\style-vue.css dest\\desktop\\css\\ & xcopy /Y /S /I dist\\kintone-vue.js dest\\mobile\\js\\ & xcopy /Y /S /I dist\\style-vue.css dest\\mobile\\css\\",
+    "test": "vite build && npm run copy-build-file-to-kintone",
+    "kintone": "vite build --mode production && npm run copy-build-file-to-kintone && akcu once",
+    "dev-upload": "npm run build-dev && npm run copy-build-file-to-kintone && akcu once",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "pinia": "^3.0.3",
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-vue": "~10.2.0",
+    "globals": "^16.2.0",
+    "prettier": "3.5.3",
+    "vite": "^7.0.0",
+    "vite-plugin-vue-devtools": "^7.7.7"
+  }
+}
